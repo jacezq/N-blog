@@ -56,7 +56,7 @@ router.post('/', checkLogin, function(req, res, next) {
       post = result.ops[0];
       req.flash('success', '发表成功');
       // 发表成功后跳转到该文章页
-      res.redirect(`/posts/${post._id}`);
+      res.redirect('/posts/${post._id}');
     })
     .catch(next);
 });
@@ -116,7 +116,7 @@ router.post('/:postId/edit', checkLogin, function(req, res, next) {
     .then(function () {
       req.flash('success', '编辑文章成功');
       // 编辑成功后跳转到上一页
-      res.redirect(`/posts/${postId}`);
+      res.redirect('/posts/${postId}');
     })
     .catch(next);
 });
